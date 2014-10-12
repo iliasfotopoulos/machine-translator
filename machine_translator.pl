@@ -62,3 +62,29 @@ ennum(X,[[N,Y,Z],X]) :-
                                 N is floor(X / 100) * 100, % Ν = hundreds
                                 Y is X mod 100-X mod 10, % Y = tens
                                 Z is X mod 10. % Z = units
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Greek alphanumeric and dictionary
+
+el(N) --> eidikoiarithmoi(N);ekatontades(N);dekades(N);monades(N).
+el(N) --> ekatontades(N1),dekades(N2),monades(N3),
+{N is N1 + N2 + N3,N =\= 11, N =\= 12}.
+el(N) --> dekades(N1),monades(N2),
+{N is N1 + N2,N =\= 11, N =\= 12}.
+el(N)-->ekatontades(N1),dekades(N2),
+        {N is N1 + N2,N =\= 11, N =\= 12}.
+el(N)-->ekatontades(N1),monades(N2),
+        {N is N1 + N2,N =\= 11, N =\= 12}.
+
+
+eidikoiarithmoi(N)--> mhden(N);enteka(N);dwdeka(N);ekato(N).
+
+ekatontades(N)--> ekaton(N);diakosia(N);triakosia(N);tetrakosia(N);pentakosia(N);
+                exakosia(N);eftakosia(N);oktakosia(N);enniakosia(N).
+
+dekades(N) --> deka(N);eikosi(N);trianta(N);saranta(N);penhnta(N);
+                exhnta(N);ebdomhnta(N);ogdonta(N);ennenhnta(N).
+
+
+monades(N) --> ena(N);duo(N);tria(N);tessera(N);pente(N);
+                exi(N);efta(N);oktw(N);ennia(N).
