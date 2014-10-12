@@ -67,26 +67,26 @@ ennum(X,[[N,Y,Z],X]) :-
 % Greek alphanumeric and dictionary
 % 6 Rules (Cases)
 
-%Special cases 11,12 | Hundreds 100,200 | Tens 10,20 | Units 1,2
+% Special cases 11,12 | Hundreds 100,200 | Tens 10,20 | Units 1,2
 el(N) --> eidikoiarithmoi(N);ekatontades(N);dekades(N);monades(N).
 
-%Example: 128 
+% Example: 128 
 el(N) --> ekatontades(N1),dekades(N2),monades(N3),
 {N is N1 + N2 + N3,N =\= 11, N =\= 12}.
 
-%Example: 42
+% Example: 42
 el(N) --> dekades(N1),monades(N2),
 {N is N1 + N2,N =\= 11, N =\= 12}.
 
-%Example: 140
+% Example: 140
 el(N)--> ekatontades(N1),dekades(N2),
         {N is N1 + N2,N =\= 11, N =\= 12}.
 
-%Example: 302        
+% Example: 302        
 el(N)--> ekatontades(N1),monades(N2),
         {N is N1 + N2,N =\= 11, N =\= 12}.
 
-%Example 112
+% Example 112
 ell(N)--> ekatontades(N1),eidikoiarithmoi(N2),
 		{N is N1 + N2,N2 =\= 100, N2 =\= 0},!.        
 
@@ -140,18 +140,29 @@ enniakosia(900) --> [εννιακόσια].
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % English alphanumeric and dictionary
 
+% Special cases 11,12,19 | Hundreds 100,200 | Tens 10,20 | Units 1,2
 en(N) --> specialcases(N);hundreds(N);tens(N);units(N).
 
-en(N)-->hundreds(N1),specialcases(N2),
-{N is N1 + N2,N =\= 0},!.
+% Example: 128
 en(N) --> hundreds(N1),tens(N2),units(N3),
 {N is N1 + N2 + N3,N =\= 11, N =\= 12, N =\= 13, N =\= 14, N =\= 15, N =\= 16, N =\= 17, N =\= 18, N =\= 19,N2+N3=\=11,N2+N3=\=12,N2+N3=\=13,N2+N3=\=14,N2+N3=\=15,N2+N3=\=16,N2+N3=\=17,N2+N3=\=18,N2+N3=\=19}.
+
+% Example: 42
 en(N) --> tens(N1),units(N2),
 {N is N1 + N2,N =\= 11, N =\= 12, N =\= 13, N =\= 14, N =\= 15, N =\= 16, N =\= 17, N =\= 18, N =\= 19}.
+
+% Example: 140
 en(N)-->hundreds(N1),tens(N2),
 {N is N1 + N2,N =\= 11, N =\= 12, N =\= 13, N =\= 14, N =\= 15, N =\= 16, N =\= 17, N =\= 18, N =\= 19}.
+
+% Example: 302
 en(N)-->hundreds(N1),units(N2),
 {N is N1 + N2,N =\= 11, N =\= 12, N =\= 13, N =\= 14, N =\= 15, N =\= 16, N =\= 17, N =\= 18, N =\= 19}.
+
+% Example 119
+en(N)-->hundreds(N1),specialcases(N2),
+{N is N1 + N2,N =\= 0},!.
+
 
 
 specialcases(N)--> zero(N);eleven(N);twelve(N);thirteen(N);fourteen(N);fifteen(N);sixteen(N);seventeen(N);eighteen(N);nineteen(N).
