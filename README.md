@@ -25,3 +25,7 @@ Design a natural language machine translator that takes as input a number from z
 * ογδόντα => quatre vingt
 * ενενήντα => quatre vingt dix
 * εξακόσια => six hundred
+
+## Programming Enviroment
+
+Usage of DCG (definite clause grammar), using [GULP 3.1](http://www.cs.toronto.edu/~dianaz/2501/Parser/gulp3mod.pl) Prolog extension for Unification-Based Grammar.
