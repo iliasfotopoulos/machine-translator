@@ -87,7 +87,7 @@ el(N)--> ekatontades(N1),monades(N2),
         {N is N1 + N2,N =\= 11, N =\= 12}.
 
 % Example 112
-ell(N)--> ekatontades(N1),eidikoiarithmoi(N2),
+el(N)--> ekatontades(N1),eidikoiarithmoi(N2),
 		{N is N1 + N2,N2 =\= 100, N2 =\= 0},!.        
 
 
@@ -217,3 +217,38 @@ ninehundred(900) --> ['nine hundred'].
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Main Functions
+
+% Number to Greek
+greeknum(X,Y) :-
+                elnum(X,[_,Z]),
+                el(Z,Y,[]).
+
+% Number to English
+englishnum(X,Y) :-
+                ennum(X,[_,Z]),
+                en(Z,Y,[]).
+
+% Greek to Number
+greekalpha(Y,X) :-
+                el(Z,Y,[]),
+                elnum(X,[_,Z]).
+
+
+% English to Number
+englishalpha(Y,X) :-
+                en(Z,Y,[]),
+                ennum(X,[_,Z]).
+
+% Translate from Greek to English
+translategreek(Y,Z) :-
+                greekalpha(Y,X),
+                englishnum(X,Z),
+                write('Το νούμερο'),write(Y),write('στα αγγλικά είναι:').
+
+% Translate from English to Greek
+translateenglish(Y,Z) :-
+	       		englishalpha(Y,X),
+                greeknum(X,Z),
+                write('The number'),write(Y),write('in Greek is:').
