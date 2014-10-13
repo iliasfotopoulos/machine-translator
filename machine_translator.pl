@@ -65,7 +65,7 @@ ennum(X,[[N,Y,Z],X]) :-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Greek alphanumeric and dictionary
-% 6 Rules (Cases)
+% 9 Rules (Cases)
 
 % Special cases 11,12 | Hundreds 100,200 | Tens 10,20 | Units 1,2
 el(N) --> eidikoiarithmoi(N);ekatontades(N);dekades(N);monades(N).
