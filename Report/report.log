@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.10.5)  13 OCT 2014 11:51
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.10.5)  13 OCT 2014 12:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -915,7 +915,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Font shape `EU1/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `EU1/lmtt/b/n' tried instead on input line 3.
 )
-[1] (./elrules.pl) (./eldic.pl [2]) (./mainfunctions.pl [3]) [4] (./report.aux)
+[1] (./elrules.pl) (./eldic.pl [2]) (./mainfunctions.pl [3])
+Overfull \hbox (17.39648pt too wide) in paragraph at lines 116--117
+\EU1/TimesNewRoman(1)/m/sc/12 Κατά την ανάπτυξη του μηχανικού μεταφραστή υπήρξα
+ν και προβλήματα αμφισημίας
+ []
+
+
+Overfull \hbox (8.70947pt too wide) in paragraph at lines 119--120
+[]\EU1/TimesNewRoman(1)/m/sc/12 Στα ελληνικά είχαμε τις ειδικές περιπτώσεις του
+ 11 και 12, όπου δεν μπορούσε
+ []
+
+[4] (./report.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
